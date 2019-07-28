@@ -24,13 +24,13 @@ namespace ML {
 			List(T val);
 
 			/* FIRST */
-			Node* head();
+			T first();
 
 			/* END */
-			Node* end();
+			T end();
 
 			/* RETRIEVE */
-			Node* get(int pos);
+			T get(int pos);
 
 			/* INSERT */
 			List<T>* insert(T val, int pos);
@@ -42,10 +42,10 @@ namespace ML {
 			List<T>* remove(int pos);
 
 			/* NEXT */
-			Node* next(int pos);
+			T next(int pos);
 
 			/* PREVIOUS */
-			Node* prev(int pos);
+			T prev(int pos);
 
 			/* MAKENULL */
 			List<T>* clear();

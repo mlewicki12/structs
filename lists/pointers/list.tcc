@@ -36,29 +36,31 @@ namespace ML {
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::head() {
-		return _head;
+	T List<T>::first() {
+		return _head->visit();
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::end() {
+	T List<T>::end() {
 		Node* _cur = _head;
+
 		while(_cur->next() != nullptr) {
 			_cur = _cur->next();
 		}
 
-		return _cur;
+		return _cur->visit();
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::get(int pos) {
+	T List<T>::get(int pos) {
 		Node* _cur = _head;
+
 		while(_cur != nullptr && pos > 0) {
 			_cur = _cur->next();
 			pos -= 1;
 		}
 
-		return _cur;
+		return _cur->visit();
 	}
 
 	template <typename T>
@@ -119,7 +121,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::next(int pos) {
+	T List<T>::next(int pos) {
 		Node* _cur = _head;
 
 		while(_cur != nullptr && pos > 0) {
@@ -128,14 +130,15 @@ namespace ML {
 		}
 
 		if(_cur == nullptr) {
-			return nullptr;
+			// unsure what to return for a null value, so you get -1
+			return -1;
 		}
 
-		return _cur->next();
+		return _cur->next()->visit();
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::prev(int pos) {
+	T List<T>::prev(int pos) {
 		Node* _cur = _head;
 		Node* _prev;
 
@@ -146,10 +149,10 @@ namespace ML {
 		}
 
 		if(pos != 0) {
-			return nullptr;
+			return -1;
 		}
 
-		return _prev;
+		return _prev->visit();
 	}
 
 	template <typename T>
@@ -170,15 +173,20 @@ namespace ML {
 
 	template <typename T>
 	List<T>* List<T>::add(T val) {
-		Node* _cur = end();
-		_cur->next(val);
+		Node* _cur = _head;
 
+		while(_cur->next() != nullptr) {
+			_cur = _cur->next();
+		}
+
+		_cur->next(val);
 		return this;
 	}
 
 	template <typename T>
 	void List<T>::print() {
 		Node* _cur = _head;
+
 		while(_cur != nullptr) {
 			std::cout << _cur->visit() << " ";
 			_cur = _cur->next();
