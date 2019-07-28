@@ -10,7 +10,7 @@ namespace ML {
 				public:
 					Node(T val);
 					T visit();
-					T next();
+					Node* next();
 					Node* next(Node* val);
 					Node* next(T val);
 				private:

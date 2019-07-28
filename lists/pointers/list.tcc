@@ -12,7 +12,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::Node::next() {
+	typename List<T>::Node* List<T>::Node::next() {
 		return _next;
 	}
 
@@ -43,8 +43,8 @@ namespace ML {
 	template <typename T>
 	typename List<T>::Node* List<T>::end() {
 		Node* _cur = _head;
-		while(_cur->next != nullptr) {
-			_cur = _cur->next;
+		while(_cur->next() != nullptr) {
+			_cur = _cur->next();
 		}
 
 		return _cur;
