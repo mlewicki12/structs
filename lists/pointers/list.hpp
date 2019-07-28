@@ -2,6 +2,8 @@
 #ifndef ML_LIST_POINTER
 #define ML_LIST_POINTER
 
+#include <iostream>
+
 namespace ML {
 	template <typename T>
 	class List {
@@ -20,10 +22,38 @@ namespace ML {
 
 		public:
 			List(T val);
+
+			/* FIRST */
 			Node* head();
+
+			/* END */
 			Node* end();
-			List<T>* add(Node* val);
+
+			/* RETRIEVE */
+			Node* get(int pos);
+
+			/* INSERT */
+			List<T>* insert(T val, int pos);
+
+			/* LOCATE */
+			int find(T val);
+
+			/* DELETE */
+			List<T>* remove(int pos);
+
+			/* NEXT */
+			Node* next(int pos);
+
+			/* PREVIOUS */
+			Node* prev(int pos);
+
+			/* MAKENULL */
+			List<T>* clear();
+
 			List<T>* add(T val);
+
+			/* PRINTLIST */
+			void print();
 		private:
 			Node* _head;
 	};
