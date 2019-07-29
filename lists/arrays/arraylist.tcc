@@ -32,7 +32,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	int ArrayList<T>::first() {
+	T ArrayList<T>::first() {
 		return _inner[0];
 	}
 

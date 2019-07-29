@@ -1,16 +1,32 @@
 
 #include <iostream>
+#include <assert.h>
+
 #include "arraystack.hpp"
 
 int main() {
-	auto stack = new ML::ArrayStack<int>(5);
+	auto stack = new ML::ArrayStack<int>();
 
-	stack->push(7)->push(10);
-	std::cout << stack->pop() << "\n";
+	std::cout << "[TEST] ArrayStack\n";
+	std::cout << "\tArrayStack.push(), ArrayStack.top()";
 
-	std::cout << stack->top() << "\n";
+	stack->push(5);
+	assert(stack->top() == 5);
+	std::cout << "\t--PASSED\n\n";
 
-	std::cout << stack->empty() << "\n";
-		stack->clear();
-	std::cout << stack->empty() << "\n";
+	std::cout << "\tArrayStack.pop()";
+
+	stack->push(7);
+	assert(stack->pop() == 7);
+	assert(stack->top() == 5);
+	std::cout << "\t--PASSED\n\n";
+
+	std::cout << "\tArrayStack.empty()";
+	assert(stack->empty() == 0);
+	std::cout << "\t--PASSED\n\n";
+
+	std::cout << "\tArrayStack.clear()";
+	stack->clear();
+	assert(stack->empty() == 1);
+	std::cout << "\t--PASSED\n";
 }

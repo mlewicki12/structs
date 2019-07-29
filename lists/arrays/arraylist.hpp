@@ -13,7 +13,7 @@ namespace ML {
 			ArrayList(int size);
 			ArrayList(int size, T* vals);
 			
-			int first();
+			T first();
 			ArrayList<T>* add(T val);
 			T get(int pos);
 			ArrayList<T>* insert(T val, int pos);
