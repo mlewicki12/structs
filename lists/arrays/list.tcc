@@ -60,13 +60,10 @@ namespace ML {
 	}
 
 	template <typename T>
-	int List<T>::get(int pos) {
+	T List<T>::get(int pos) {
 		if(pos < _size) {
 			return _inner[pos];
 		}
-
-		// similar here, don't know what to make the not-found value
-		return -1;
 	}
 
 	template <typename T>

@@ -15,7 +15,7 @@ namespace ML {
 			
 			int first();
 			List<T>* add(T val);
-			int get(int pos);
+			T get(int pos);
 			List<T>* insert(T val, int pos);
 			int find(T val);
 			void print();

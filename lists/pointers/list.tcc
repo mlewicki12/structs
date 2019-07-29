@@ -60,7 +60,9 @@ namespace ML {
 			pos -= 1;
 		}
 
-		return _cur->visit();
+		if(_cur != nullptr) {
+			return _cur->visit();
+		}
 	}
 
 	template <typename T>
@@ -129,12 +131,9 @@ namespace ML {
 			pos -= 1;
 		}
 
-		if(_cur == nullptr) {
-			// unsure what to return for a null value, so you get -1
-			return -1;
+		if(_cur != nullptr) {
+			return _cur->next()->visit();
 		}
-
-		return _cur->next()->visit();
 	}
 
 	template <typename T>
