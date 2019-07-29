@@ -40,8 +40,8 @@ namespace ML {
 	List<T>* List<T>::add(T val) {
 		if(_cur == _size) {
 			T* newInner;
-			newInner = (T*) realloc(_inner, sizeof(T) * _size * 2);
 			_size *= 2;
+			newInner = (T*) realloc(_inner, sizeof(T) * _size);
 
 			if(newInner != nullptr) {
 				_inner = newInner;
