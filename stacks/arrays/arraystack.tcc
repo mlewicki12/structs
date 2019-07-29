@@ -4,14 +4,14 @@
 
 namespace ML {
 	template <typename T>
-	Stack<T>::Stack() {
+	ArrayStack<T>::ArrayStack() {
 		_size = 4;
 		_inner = (T*) malloc(sizeof(T)*_size);
 		_cur = 0;
 	}
 
 	template <typename T>
-	Stack<T>::Stack(T val) {
+	ArrayStack<T>::ArrayStack(T val) {
 		_size = 4;
 		_inner = (T*) malloc(sizeof(T)*_size);
 
@@ -20,25 +20,25 @@ namespace ML {
 	}
 
 	template <typename T>
-	Stack<T>* Stack<T>::clear() {
+	ArrayStack<T>* ArrayStack<T>::clear() {
 		_cur = 0;
 	}
 
 	template <typename T>
-	T Stack<T>::top() {
+	T ArrayStack<T>::top() {
 		if(_cur > 0) {
 			return _inner[_cur];
 		}
 	}
 
 	template <typename T>
-	T Stack<T>::pop() {
+	T ArrayStack<T>::pop() {
 		_cur -= 1;
 		return _inner[_cur + 1];
 	}
 
 	template <typename T>
-	Stack<T>* Stack<T>::push(T val) {
+	ArrayStack<T>* ArrayStack<T>::push(T val) {
 		T* temp;
 
 		if(_cur + 1 == _size) {
@@ -60,7 +60,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	bool Stack<T>::empty() {
+	bool ArrayStack<T>::empty() {
 		return _cur <= 0;
 	}
 }

@@ -4,18 +4,18 @@
 
 namespace ML {
 	template <typename T>
-	class Stack {
+	class ArrayStack {
 		private:
 			T* _inner;
 			int _size;
 			int _cur;
 
 		public:
-			Stack();
-			Stack(T val);
+			ArrayStack();
+			ArrayStack(T val);
 
 			/* MAKENULL */
-			Stack* clear();
+			ArrayStack* clear();
 
 			/* TOP */
 			T top();
@@ -24,13 +24,13 @@ namespace ML {
 			T pop();
 
 			/* PUSH */
-			Stack* push(T val);
+			ArrayStack* push(T val);
 
 			/* CLEAR */
 			bool empty();
 	};
 }
 
-#include "stack.tcc"
+#include "arraystack.tcc"
 
 #endif

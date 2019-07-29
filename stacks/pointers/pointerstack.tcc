@@ -1,18 +1,18 @@
 
 namespace ML {
 	template <typename T>
-	Stack<T>::Stack() {
+	PointerStack<T>::PointerStack() {
 		_top = nullptr;
 	}
 
 	template <typename T>
-	Stack<T>::Stack(T val) {
+	PointerStack<T>::PointerStack(T val) {
 		_top = new Node();
 		_top->val = val;
 	}
 
 	template <typename T>
-	Stack<T>* Stack<T>::clear() {
+	PointerStack<T>* PointerStack<T>::clear() {
 		Node* _temp;
 
 		while(_top != nullptr) {
@@ -25,14 +25,14 @@ namespace ML {
 	}
 
 	template <typename T>
-	T Stack<T>::top() {
+	T PointerStack<T>::top() {
 		if(_top != nullptr) {
 			return _top->val;
 		}
 	}
 
 	template <typename T>
-	T Stack<T>::pop() {
+	T PointerStack<T>::pop() {
 		Node* _temp;
 
 		if(_top != nullptr) {
@@ -44,7 +44,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	Stack<T>* Stack<T>::push(T val) {
+	PointerStack<T>* PointerStack<T>::push(T val) {
 		Node* _temp;
 
 		if(_top != nullptr) {
@@ -60,7 +60,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	bool Stack<T>::empty() {
+	bool PointerStack<T>::empty() {
 		return _top == nullptr;
 	}
 }

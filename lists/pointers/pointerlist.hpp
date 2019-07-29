@@ -6,7 +6,7 @@
 
 namespace ML {
 	template <typename T>
-	class List {
+	class PointerList {
 		private:
 			class Node {
 				public:
@@ -21,7 +21,7 @@ namespace ML {
 			};
 
 		public:
-			List(T val);
+			PointerList(T val);
 
 			/* FIRST */
 			T first();
@@ -33,13 +33,13 @@ namespace ML {
 			T get(int pos);
 
 			/* INSERT */
-			List<T>* insert(T val, int pos);
+			PointerList<T>* insert(T val, int pos);
 
 			/* LOCATE */
 			int find(T val);
 
 			/* DELETE */
-			List<T>* remove(int pos);
+			PointerList<T>* remove(int pos);
 
 			/* NEXT */
 			T next(int pos);
@@ -48,9 +48,9 @@ namespace ML {
 			T prev(int pos);
 
 			/* MAKENULL */
-			List<T>* clear();
+			PointerList<T>* clear();
 
-			List<T>* add(T val);
+			PointerList<T>* add(T val);
 
 			/* PRINTLIST */
 			void print();
@@ -59,6 +59,6 @@ namespace ML {
 	};
 }
 
-#include "list.tcc"
+#include "pointerlist.tcc"
 
 #endif

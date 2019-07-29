@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "stack.hpp"
+#include "pointerstack.hpp"
 
 int main() {
-	auto stack = new ML::Stack<int>(5);
+	auto stack = new ML::PointerStack<int>(5);
 
 	stack->push(7)->push(10);
 	std::cout << stack->pop() << "\n";

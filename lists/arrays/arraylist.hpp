@@ -4,28 +4,28 @@
 
 namespace ML {
 	template <typename T>
-	class List {
+	class ArrayList {
 		private:
 			T* _inner;
 			int _size;
 			int _cur;
 		public:
-			List(int size);
-			List(int size, T* vals);
+			ArrayList(int size);
+			ArrayList(int size, T* vals);
 			
 			int first();
-			List<T>* add(T val);
+			ArrayList<T>* add(T val);
 			T get(int pos);
-			List<T>* insert(T val, int pos);
+			ArrayList<T>* insert(T val, int pos);
 			int find(T val);
 			void print();
 			void remove(int pos);
 			T next(int pos);
 			T prev(int pos);
-			List<T>* clear();
+			ArrayList<T>* clear();
 	};
 }
 
-#include "list.tcc"
+#include "arraylist.tcc"
 
 #endif

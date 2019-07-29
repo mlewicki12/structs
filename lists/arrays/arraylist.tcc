@@ -4,7 +4,7 @@
 
 namespace ML {
 	template <typename T>
-	List<T>::List(int size) {
+	ArrayList<T>::ArrayList(int size) {
 		_size = size;
 
 		if(size <= 0) {
@@ -16,7 +16,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>::List(int size, T* vals) {
+	ArrayList<T>::ArrayList(int size, T* vals) {
 		_size = size;
 
 		if(size <= 0) {
@@ -32,12 +32,12 @@ namespace ML {
 	}
 
 	template <typename T>
-	int List<T>::first() {
+	int ArrayList<T>::first() {
 		return _inner[0];
 	}
 
 	template <typename T>
-	List<T>* List<T>::add(T val) {
+	ArrayList<T>* ArrayList<T>::add(T val) {
 		if(_cur == _size) {
 			T* newInner;
 			_size *= 2;
@@ -60,14 +60,14 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::get(int pos) {
+	T ArrayList<T>::get(int pos) {
 		if(pos < _size) {
 			return _inner[pos];
 		}
 	}
 
 	template <typename T>
-	List<T>* List<T>::insert(T val, int pos) {
+	ArrayList<T>* ArrayList<T>::insert(T val, int pos) {
 		if(_cur + 1 == _size) {
 			T* newInner;
 			_size *= 2;
@@ -92,7 +92,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	int List<T>::find(T val) {
+	int ArrayList<T>::find(T val) {
 		for(int i = 0; i < _cur; ++i) {
 			if(val == _inner[i]) {
 				return i;
@@ -103,7 +103,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	void List<T>::print() {
+	void ArrayList<T>::print() {
 		for(int i = 0; i < _cur; ++i) {
 			std::cout << _inner[i] << " ";
 		}
@@ -112,7 +112,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	void List<T>::remove(int pos) {
+	void ArrayList<T>::remove(int pos) {
 		for(int i = pos; i < _cur - 1; ++i) {
 			_inner[i] = _inner[i + 1];
 		}
@@ -121,7 +121,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::next(int pos) {
+	T ArrayList<T>::next(int pos) {
 		if(pos < _cur) {
 			return _inner[pos + 1];
 		}
@@ -130,7 +130,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::prev(int pos) {
+	T ArrayList<T>::prev(int pos) {
 		if(pos < _cur && pos != 0) {
 			return _inner[pos - 1];
 		}
@@ -139,7 +139,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>* List<T>::clear() {
+	ArrayList<T>* ArrayList<T>::clear() {
 		_cur = 0;
 		return this;
 	}

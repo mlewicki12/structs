@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "list.hpp"
+#include "pointerlist.hpp"
 
 int main() {
-	auto test = new ML::List<int>(5);
+	auto test = new ML::PointerList<int>(5);
 	std::cout << test->first() << "\n";
 
 	test->add(1)->add(4)->add(3);

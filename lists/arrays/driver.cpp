@@ -1,11 +1,11 @@
 
 #include <iostream>
-#include "list.hpp"
+#include "arraylist.hpp"
 
 int main() {
 	int init[] = {5, 4, 5};
 
-	auto test = new ML::List<int>(3, init);
+	auto test = new ML::ArrayList<int>(3, init);
 	std::cout << test->first() << "\n";
 
 	test->add(1)->add(4)->add(3);

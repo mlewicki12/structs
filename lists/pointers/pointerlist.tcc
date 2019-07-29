@@ -1,29 +1,29 @@
 
 namespace ML {
 	template <typename T>
-	List<T>::Node::Node(T val) {
+	PointerList<T>::Node::Node(T val) {
 		_data = val;
 		_next = nullptr;
 	}
 
 	template <typename T>
-	T List<T>::Node::visit() {
+	T PointerList<T>::Node::visit() {
 		return _data;
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::Node::next() {
+	typename PointerList<T>::Node* PointerList<T>::Node::next() {
 		return _next;
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::Node::next(Node* val) {
+	typename PointerList<T>::Node* PointerList<T>::Node::next(Node* val) {
 		_next = val;
 		return this;
 	}
 
 	template <typename T>
-	typename List<T>::Node* List<T>::Node::next(T val) {
+	typename PointerList<T>::Node* PointerList<T>::Node::next(T val) {
 		_next = new Node(val);
 		return this;
 	}
@@ -31,17 +31,17 @@ namespace ML {
 	// --------- //
 
 	template <typename T>
-	List<T>::List(T val) {
+	PointerList<T>::PointerList(T val) {
 		_head = new Node(val);
 	}
 
 	template <typename T>
-	T List<T>::first() {
+	T PointerList<T>::first() {
 		return _head->visit();
 	}
 
 	template <typename T>
-	T List<T>::end() {
+	T PointerList<T>::end() {
 		Node* _cur = _head;
 
 		while(_cur->next() != nullptr) {
@@ -52,7 +52,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::get(int pos) {
+	T PointerList<T>::get(int pos) {
 		Node* _cur = _head;
 
 		while(_cur != nullptr && pos > 0) {
@@ -66,7 +66,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>* List<T>::insert(T val, int pos) {
+	PointerList<T>* PointerList<T>::insert(T val, int pos) {
 		Node* _cur = _head;
 		Node* temp;
 		Node* add = new Node(val);
@@ -84,7 +84,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	int List<T>::find(T val) {
+	int PointerList<T>::find(T val) {
 		Node* _cur = _head;
 		int pos = 0;
 
@@ -105,7 +105,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>* List<T>::remove(int pos) {
+	PointerList<T>* PointerList<T>::remove(int pos) {
 		Node* _cur = _head;
 		Node* _prev;
 
@@ -123,7 +123,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::next(int pos) {
+	T PointerList<T>::next(int pos) {
 		Node* _cur = _head;
 
 		while(_cur != nullptr && pos > 0) {
@@ -137,7 +137,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	T List<T>::prev(int pos) {
+	T PointerList<T>::prev(int pos) {
 		Node* _cur = _head;
 		Node* _prev;
 
@@ -155,7 +155,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>* List<T>::clear() {
+	PointerList<T>* PointerList<T>::clear() {
 		Node* _cur = _head;
 		Node* _temp;
 
@@ -171,7 +171,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	List<T>* List<T>::add(T val) {
+	PointerList<T>* PointerList<T>::add(T val) {
 		Node* _cur = _head;
 
 		while(_cur->next() != nullptr) {
@@ -183,7 +183,7 @@ namespace ML {
 	}
 
 	template <typename T>
-	void List<T>::print() {
+	void PointerList<T>::print() {
 		Node* _cur = _head;
 
 		while(_cur != nullptr) {

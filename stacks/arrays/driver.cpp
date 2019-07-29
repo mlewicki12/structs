@@ -1,9 +1,9 @@
 
 #include <iostream>
-#include "stack.hpp"
+#include "arraystack.hpp"
 
 int main() {
-	auto stack = new ML::Stack<int>(5);
+	auto stack = new ML::ArrayStack<int>(5);
 
 	stack->push(7)->push(10);
 	std::cout << stack->pop() << "\n";

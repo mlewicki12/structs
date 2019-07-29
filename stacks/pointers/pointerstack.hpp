@@ -4,7 +4,7 @@
 
 namespace ML {
 	template <typename T>
-	class Stack {
+	class PointerStack {
 		private:
 			struct Node {
 				T val;
@@ -14,11 +14,11 @@ namespace ML {
 			Node* _top;
 
 		public:
-			Stack();
-			Stack(T val);
+			PointerStack();
+			PointerStack(T val);
 
 			/* MAKENULL */
-			Stack* clear();
+			PointerStack* clear();
 
 			/* TOP */
 			T top();
@@ -27,13 +27,13 @@ namespace ML {
 			T pop();
 
 			/* PUSH */
-			Stack* push(T val);
+			PointerStack* push(T val);
 
 			/* CLEAR */
 			bool empty();
 	};
 }
 
-#include "stack.tcc"
+#include "pointerstack.tcc"
 
 #endif
