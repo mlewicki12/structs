@@ -1,3 +1,12 @@
 # cs260-assignment1
 
+Each implemented data structure is in its own directory:
 
+lists/
+	arrays/
+	pointers/
+stacks/
+	arrays/
+	pointers/
+
+The Makefile in the main directory contains specified targets for each of the structures.
